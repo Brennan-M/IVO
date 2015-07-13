@@ -40,7 +40,9 @@ public class LoginActivityFragment extends Fragment {
             AccessToken accessToken = loginResult.getAccessToken();
             Profile profile = Profile.getCurrentProfile(); // Stores much information about our FB user, be sure to read more about its capabilities here
                             // https://developers.facebook.com/docs/facebook-login/android/v2.4 , video here https://www.youtube.com/watch?v=myWu-q8Q2NA
-            mTextDetails.setText(constructWelcomeMessage(profile));
+            // mTextDetails.setText(constructWelcomeMessage(profile));
+            Intent startHomescreenActivity = new Intent(LoginActivityFragment.this.getActivity(), Homescreen.class);
+            startActivity(startHomescreenActivity);
         }
 
         @Override

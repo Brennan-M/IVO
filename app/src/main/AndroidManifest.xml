@@ -32,6 +32,10 @@
             android:name=".Homescreen"
             android:label="@string/title_activity_homescreen" >
         </activity>
+        <activity
+            android:name=".IVOPost"
+            android:label="@string/title_activity_ivopost" >
+        </activity>
     </application>
 
 </manifest>

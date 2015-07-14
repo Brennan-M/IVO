@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="IVOPosts"
-        android:id="@+id/IvoPostActivity"
+        android:id="@+id/startIVOPostActivityButton"
         android:layout_marginTop="60dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />

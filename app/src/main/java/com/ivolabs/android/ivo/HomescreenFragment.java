@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.view.View.OnClickListener;
 import android.content.Intent;
 
 
@@ -16,28 +15,25 @@ import android.content.Intent;
 public class HomescreenFragment extends Fragment {
 
     Button startIVOPostButton;
-    private int contentView;
-
-    public HomescreenFragment() {
-    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_homescreen, container, false);
-        setContentView(R.layout.fragment_homescreen);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        // Locate the button in activity_main.xml
-        startIVOPostButton = (Button) findViewById(R.id.IvoPostActivity);
+        View view =  inflater.inflate(R.layout.fragment_homescreen, container, false);
 
-        // Capture button clicks
-        startIVOPostButton.setOnClickListener(new OnClickListener()) {
-            public void onClick(View view) {
+        enableHomeScreenButtons(view);
 
-                // Start NewActivity.class
-                Intent myIntent = new Intent(HomescreenFragment.this.getActivity(), IVOPostActivity.class);
-                startActivity(myIntent);
-            }
-        };
+        return view;
+    }
+
+    private void enableHomeScreenButtons(View view) {
+        startIVOPostButton = (Button) view.findViewById(R.id.startIVOPostActivityButton);
+
+        startIVOPostButton.setOnClickListener(new View.OnClickListener() {
+             public void onClick(View v) {
+                 Intent startIVOPostActivity = new Intent(HomescreenFragment.this.getActivity(), IVOPost.class);
+                 startActivity(startIVOPostActivity);
+             }
+        });
     }
 }

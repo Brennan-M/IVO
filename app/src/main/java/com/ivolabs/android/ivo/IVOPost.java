@@ -12,6 +12,7 @@ public class IVOPost extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ivopost);
+        new GcmRegistrationAsyncTask(this).execute();
     }
 
 

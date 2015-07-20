@@ -15,6 +15,7 @@ public class IVOPostFragment extends Fragment {
     public IVOPostFragment() {
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
